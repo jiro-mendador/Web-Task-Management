@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects - Task Management</title>
+  <link rel="stylesheet" href="projects.css">
+  <!-- for icons -->
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+  <article class="whole-page-container">
+    <header>
+      <i class="bx bx-menu bx-md" id="menu"></i>
+      <p class="page-title">Projects</p>
+      <div class="search">
+        <input type="text">
+        <i class="bx bx-search bx-sm"></i>
+      </div>
+    </header>
+
+    <nav>
+      <p class="user-fullname">
+        Jiro Mendador
+        <i class="bx bx-window-close bx-xs" id="close-menu"></i>
+      </p>
+      <a href="../index/dashboard.html">
+        <i class="bx bxs-dashboard bx-xs"></i>
+        <p>Dashboard</p>
+      </a>
+      <a href="#">
+        <i class="bx bxs-folder bx-xs"></i>
+        <p>Projects</p>
+      </a>
+      <a href="../tasks/task.html">
+        <i class="bx bxs-book-content bx-xs"></i>
+        <p>Tasks</p>
+      </a>
+    </nav>
+
+    <section class="contents">
+
+      <section class="projects-in-progress">
+        <p>In Progress</p>
+        <section class="projects-container">
+          <section class="add-project">
+            <i class="bx bx-plus bx-lg add-task"></i>
+          </section>
+          <section class="project">
+            <p class="project-priority-level">H</p>
+            <p class="project-title">Project title</p>
+            <div>
+              <p class="project-progress-label">Progress</p>
+              <p class="project-progress">84%</p>
+            </div>
+          </section>
+          <section class="project">
+            <p class="project-priority-level">H</p>
+            <p class="project-title">Project title</p>
+            <div>
+              <p class="project-progress-label">Progress</p>
+              <p class="project-progress">84%</p>
+            </div>
+          </section>
+        </section>
+      </section>
+
+      <section class="projects-completed">
+        <p>Completed</p>
+        <section class="projects-container">
+          <section class="project">
+            <p class="project-priority-level">H</p>
+            <p class="project-title">Project title</p>
+            <div>
+              <p class="project-progress-label">Progress</p>
+              <p class="project-progress">84%</p>
+            </div>
+          </section>
+          <section class="project">
+            <p class="project-priority-level">H</p>
+            <p class="project-title">Project title</p>
+            <div>
+              <p class="project-progress-label">Progress</p>
+              <p class="project-progress">84%</p>
+            </div>
+          </section>
+          <section class="project">
+            <p class="project-priority-level">H</p>
+            <p class="project-title">Project title</p>
+            <div>
+              <p class="project-progress-label">Progress</p>
+              <p class="project-progress">84%</p>
+            </div>
+          </section>
+        </section>
+      </section>
+
+    </section>
+
+  </article>
+  <!-- projects script -->
+  <script type="module" src="projects.js"></script>
+</body>
+
+</html>

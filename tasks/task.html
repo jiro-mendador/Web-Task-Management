@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task - Task Management</title>
+  <link rel="stylesheet" href="task.css">
+  <!-- for icons -->
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+  <article class="whole-page-container">
+    <header>
+      <i class="bx bx-menu bx-md" id="menu"></i>
+      <p class="page-title">Tasks</p>
+      <i class="bx bx-search bx-sm search"></i>
+    </header>
+
+    <nav>
+      <p class="user-fullname">
+        Jiro Mendador
+        <i class="bx bx-window-close bx-xs" id="close-menu"></i>
+      </p>
+      <a href="../index/dashboard.html">
+        <i class="bx bxs-dashboard bx-xs"></i>
+        <p>Dashboard</p>
+      </a>
+      <a href="../projects/projects.html">
+        <i class="bx bxs-folder bx-xs"></i>
+        <p>Projects</p>
+      </a>
+      <a href="#">
+        <i class="bx bxs-book-content bx-xs"></i>
+        <p>Tasks</p>
+      </a>
+    </nav>
+
+    <section class="contents">
+      <section class="project-details">
+        <div>
+          <!-- <input readonly type="text" class="project-title" value="Project Title">
+          <div class="project-description" contenteditable="false">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, assumenda</div> -->
+          <p class="project-title">Project Title</p>
+          <p class="project-description">Lorem ipsum dolor sit amet
+            consectetur adipisicing elit. Beatae, assumenda</p>
+          <div>
+            <label class="project-deadline" for="deadline">Deadline</label>
+            <input id="deadline" type="date" class="deadline" readonly>
+          </div>
+        </div>
+        <div class="action">
+          <i class='bx bxs-pencil bx-sm'></i>
+          <i class="bx bx-plus bx-sm"></i>
+        </div>
+      </section>
+
+      <section class="project-tasks">
+
+        <section class="to-do">
+          <p>To-do</p>
+          <div>
+            <section class="task">
+              <input type="checkbox" class="round-checkbox" id="task1" name="task1" value="Task 1">
+              <label for="task1">Practice Web Dev</label>
+            </section>
+            <section class="task">
+              <input type="checkbox" class="round-checkbox" id="task1" name="task1" value="Task 1">
+              <label for="task1">Practice Web Dev</label>
+            </section>
+            <section class="task">
+              <input type="checkbox" class="round-checkbox" id="task1" name="task1" value="Task 1">
+              <label for="task1">Practice Web Dev</label>
+            </section>
+          </div>
+        </section>
+
+        <section class="completed">
+          <p>Completed</p>
+          <div>
+            <section class="task">
+              <input type="checkbox" class="round-checkbox" id="task1" name="task1" value="Task 1">
+              <label for="task1">Practice Web Dev</label>
+            </section>
+          </div>
+        </section>
+
+      </section>
+
+    </section>
+
+    <article class="project-infos hide">
+      <section class="details">
+        <input type="text" id="title" placeholder="Project Title" class="project-title">
+        <input type="text" id="description" placeholder="Project Description" class="project-description">
+        <div>
+          <label for="deadline" class="project-deadline">Deadline</label>
+          <input type="date" id="deadline" placeholder="Deadline" class="deadline">
+        </div>
+        </div>
+        <button class="btnAddUpdate">Add</button>
+      </section>
+
+    </article>
+
+  </article>
+
+  <!-- tasks script -->
+  <script type="module" src="task.js"></script>
+</body>
+
+</html>

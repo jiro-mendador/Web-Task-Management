@@ -1,0 +1,373 @@
+/*defaults*/
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-size: 16px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body,
+html {
+  height: 100%;
+  width: 100%;
+}
+
+:root {
+  /* colors */
+  --darker: #464b5b;
+  --darkest--: #242b3e;
+  --dark: #9b9da2;
+
+  --light: #ffffff;
+  --lighter: #f1ebe3;
+  --lighest--: #f8f6f1;
+
+  --yellow-acc: #e2b356;
+  --violet-acc: #d7aeff;
+  --dark-violet-acc: #543ca6;
+  --orange-acc: #ee7c58;
+  --skin-acc: #f7e0d9;
+
+  /* font-sizes */
+  --title: 1.7em;
+  --sub-title: 1.4em;
+  --details: 0.9em;
+  --sub-details: 0.7em;
+
+  /* border-radius */
+  --semi: 15px;
+  --hard: 30px;
+}
+
+body {
+  background-color: var(--darkest--);
+  overflow: visible;
+}
+
+/* parent container */
+.whole-page-container {
+  display: grid;
+  grid-template-columns: auto;
+  gap: 2em;
+  padding: 2em;
+}
+
+header,
+nav,
+nav a,
+nav p.user-fullname {
+  display: flex;
+
+  border-radius: var(--semi);
+  color: var(--lighest--);
+}
+
+/* header */
+header {
+  justify-content: space-between;
+  align-items: center;
+}
+
+header p.page-title {
+  font-size: var(--title);
+  font-weight: 600;
+}
+
+header i.search {
+  background-color: var(--darker);
+  padding: 0.2em;
+  border-radius: var(--semi);
+}
+
+/* nav */
+nav a {
+  gap: 2em;
+  align-items: center;
+  text-decoration: none;
+
+  padding: 1em;
+}
+
+nav p {
+  font-weight: 100;
+  font-size: var(--details);
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+
+  display: none;
+  flex-direction: column;
+  background-color: var(--darkest--);
+  padding: 1em;
+  gap: 1em;
+}
+
+/* for selected content */
+nav>*:nth-child(4) {
+  background-color: var(--darker);
+  border-radius: var(--semi);
+}
+
+nav p.user-fullname {
+  justify-content: space-between;
+  padding: 1em;
+  font-weight: 600;
+}
+
+
+
+/* project details */
+section.project-details,
+.project-details>div>div {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+}
+
+section.project-details {
+  justify-content: center;
+  gap: 2em;
+  margin: 0 0 1em 0;
+}
+
+.project-details>div>div {
+  margin: 0.5em 0 0 0;
+  gap: 0.3em 1em;
+}
+
+.project-details>div>p,
+article.project-infos>section>input {
+  font-weight: 600;
+}
+
+.project-title {
+  font-size: var(--sub-title);
+}
+
+.project-description {
+  font-size: var(--sub-details);
+  color: var(--dark);
+}
+
+label.project-deadline,
+input.deadline {
+  font-size: var(--details);
+  font-weight: 600;
+  color: var(--orange-acc);
+}
+
+input.deadline {
+  outline: none;
+  border: none;
+  padding: 0.3em;
+}
+
+section.contents,
+section.project-tasks,
+section.completed>div,
+section.to-do>div {
+  display: flex;
+  flex-flow: column nowrap;
+  overflow: hidden;
+  gap: 1em;
+}
+
+/* main contents */
+section.contents,
+article.project-infos {
+  background-color: var(--light);
+  border-radius: var(--semi);
+  padding: 1em;
+  color: var(--darkest--);
+}
+
+/* project tasks */
+section.project-tasks {
+  position: relative;
+  gap: 3.5em;
+}
+
+/* tasks container */
+section.completed>div,
+section.to-do>div {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+/* labels */
+.project-tasks>section>p {
+  text-transform: uppercase;
+  font-weight: 600;
+  padding: 0 0 1em 0;
+  margin: 0 0 1em 0;
+  border-bottom: 2px solid var(--dark-violet-acc);
+}
+
+.project-tasks>section>label {
+  font-size: var(--details);
+}
+
+.project-tasks>section>div>.task {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+
+/* options */
+.project-details>div:nth-child(2) {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 1em;
+  border: 2px solid var(--dark-violet-acc);
+  border-radius: var(--semi);
+  padding: 1em;
+  color: var(--dark-violet-acc);
+}
+
+/* custom checkbox */
+.round-checkbox {
+  min-width: 14px;
+  min-height: 14px;
+  border: 2px solid var(--dark-violet-acc);
+  background-color: var(--light);
+  border-radius: 5px;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.round-checkbox:checked {
+  background-color: var(--darkest--);
+}
+
+
+
+/* inputs */
+/* NOTE: WORKING ON THIS PROJECT HAS BEEN PAUSED */
+/* RESUME HERE */
+
+article.project-infos>section input {
+  outline: none;
+  border: none;
+  border-bottom: 2px solid var(--dark-violet-acc);
+  padding: 0 0 0.5em 0;
+}
+
+article.project-infos>section,
+article.project-infos>section>div {
+  display: flex;
+  gap: 1em;
+}
+
+article.project-infos>section {
+  flex-flow: column wrap;
+}
+
+article.project-infos>section>div {
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btnAddUpdate {
+  margin: 1em 0;
+  padding: 0.5em 1em;
+  background-color: var(--orange-acc);
+  color: var(--light);
+  border: none;
+  border-radius: var(--semi);
+}
+
+
+/* adjustments */
+/* tablets */
+@media screen and (min-width: 768px) {
+  .whole-page-container {
+    grid-template-columns: 300px auto;
+    grid-template-rows: auto auto;
+    gap: 3em 1em;
+    overflow: hidden;
+  }
+
+  header {
+    grid-area: 1/2/2/3;
+  }
+
+  header i:nth-child(1),
+  nav p.user-fullname>i {
+    display: none;
+  }
+
+  nav {
+    position: relative;
+    display: flex;
+    grid-area: 2/1/3/2;
+  }
+
+  section.contents {
+    grid-area: 2/2/3/3;
+    padding: 2em;
+  }
+
+
+}
+
+/* desktops */
+@media screen and (min-width: 1024px) {
+  .whole-page-container {
+    margin: 0 auto;
+    max-width: 1440px;
+  }
+
+  section.project-tasks {
+    display: grid;
+    grid-template-columns: repeat(2, 1/2fr);
+  }
+
+  section.to-do {
+    grid-area: 1/1/2/2;
+  }
+
+  section.completed {
+    grid-area: 1/2/2/3;
+  }
+
+  section.project-tasks>section>div {
+    padding: 1em;
+    max-height: 400px;
+  }
+
+  section.project-details {
+    flex-flow: row nowrap;
+    justify-content: space-between;
+  }
+
+}
+
+
+/* for testing purposes only */
+.hide {
+  display: none;
+}
+
+/* 
+TODO : responsivenessssssssssss!!!!!!!!!!
+TODO: projects and tasks layout
+
+NOTE : 
+for better project file strutcture
+use includes for the same nav and header
+make 1 page per main functions (dashboard, proj, task. acc)
+and 1 css file per main functions
+and 1 js file per main functions
+convert html files into php
+
+make 1 css file for responsiveness adjustments
+
+*/

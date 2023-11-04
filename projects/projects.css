@@ -1,0 +1,324 @@
+/*defaults*/
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-size: 16px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body,
+html {
+  height: 100%;
+  width: 100%;
+}
+
+:root {
+  /* colors */
+  --darker: #464b5b;
+  --darkest--: #242b3e;
+  --dark: #9b9da2;
+
+  --light: #ffffff;
+  --lighter: #f1ebe3;
+  --lighest--: #f8f6f1;
+
+  --yellow-acc: #e2b356;
+  --violet-acc: #d7aeff;
+  --dark-violet-acc: #543ca6;
+  --orange-acc: #ee7c58;
+  --skin-acc: #f7e0d9;
+
+  /* font-sizes */
+  --title: 1.7em;
+  --sub-title: 1.4em;
+  --details: 0.9em;
+  --sub-details: 0.7em;
+
+  /* border-radius */
+  --semi: 15px;
+  --hard: 30px;
+}
+
+body {
+  background-color: var(--darkest--);
+  overflow: visible;
+}
+
+/* parent container */
+.whole-page-container {
+  display: grid;
+  grid-template-columns: auto;
+  gap: 3em;
+  padding: 2em;
+}
+
+header,
+nav,
+nav a,
+nav p.user-fullname,
+header>div.search {
+  display: flex;
+
+  border-radius: var(--semi);
+  color: var(--lighest--);
+}
+
+/* header */
+header {
+  flex-flow: row wrap-reverse;
+  gap:1em;
+  align-items: center;
+}
+
+header p.page-title {
+  font-size: var(--title);
+  font-weight: 600;
+}
+
+header>div.search {
+  gap: 0 0.2em;
+  border-radius: var(--semi);
+  background-color: var(--darker);
+  padding: 0.5em;
+  width: 100%;
+  max-width:300px;
+}
+
+div.search>input {
+  outline-style: none;
+  border: none;
+  font-size: var(--details);
+  color: var(--light);
+  background-color: transparent;
+  transition: 0.5s ease-in-out all;
+  flex: 1;
+}
+
+/* nav */
+nav a {
+  gap: 2em;
+  align-items: center;
+  text-decoration: none;
+
+  padding: 1em;
+}
+
+nav p {
+  font-weight: 100;
+  font-size: var(--details);
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+
+  display: none;
+  flex-direction: column;
+  background-color: var(--darkest--);
+  padding: 1em;
+  gap: 1em;
+}
+
+/* for selected content */
+nav>*:nth-child(3) {
+  background-color: var(--darker);
+  border-radius: var(--semi);
+}
+
+nav p.user-fullname {
+  justify-content: space-between;
+  padding: 1em;
+  font-weight: 600;
+}
+
+
+
+/* main content */
+section.contents {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 300px 300px;
+  gap: 2.5em 0;
+  overflow: hidden;
+}
+
+/* 2 sections inside contents */
+.contents>section {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 1em;
+}
+
+/* 2 sections labels */
+.contents>section>p {
+  font-size: var(--details);
+  font-weight: 600;
+  color: var(--lighest--);
+}
+
+/* projects containers */
+section.projects-container {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 1.5em;
+
+  max-height: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  white-space: nowrap;
+  padding: 1em 1em 1em 1em;
+}
+
+/* individual projects */
+section.project,
+section.add-project {
+  border-radius: var(--semi);
+  min-width: 10em;
+  min-height: 8em;
+}
+
+section.add-project {
+  display: grid;
+  place-items: center;
+  background-color: var(--orange-acc);
+}
+
+.add-project>i {
+  color: var(--light);
+}
+
+section.project {
+  position: relative;
+  background-color: var(--light);
+  padding: 1em 2.5em 1em 1em;
+}
+
+section.project:hover {
+  border: 3px solid var(--orange-acc);
+  background-color: var(--dark-violet-acc);
+  color: var(--lighest--);
+}
+
+section p.project-title {
+  margin: 1em 0 0.5em 0;
+  font-size: var(--details);
+  font-weight: 600;
+}
+
+section p.project-progress-label {
+  font-size: var(--sub-details);
+  font-weight: 300;
+}
+
+section p.project-progress {
+  font-size: var(--sub-title);
+  font-weight: 600;
+}
+
+section p.project-priority-level {
+  position: absolute;
+  top: -1em;
+  left: 1em;
+
+  border-radius: var(--hard);
+  background-color: var(--orange-acc);
+  color: var(--lighest--);
+
+  font-size: var(--sub-details);
+  font-weight: 300;
+
+  padding: 0.5em 1em;
+}
+
+
+
+/* adjustments */
+/* tablets */
+@media screen and (min-width: 768px) {
+  .whole-page-container {
+    grid-template-columns: 300px auto;
+    grid-template-rows: auto auto;
+    gap: 3em 1em;
+  }
+
+  header {
+    grid-area: 1/2/2/3;
+    flex-flow: row nowrap;
+    justify-content:space-between;
+    /* NOTE : RESUME HEREEEEEEEEEE */
+  }
+
+  header>i:nth-child(1),
+  nav p.user-fullname>i {
+    display: none;
+  }
+
+  nav {
+    position: relative;
+    display: flex;
+    grid-area: 2/1/3/2;
+  }
+
+  section.contents {
+    grid-area: 2/2/3/3;
+    grid-template-rows: repeat(2, 1/2fr);
+  }
+
+  section.projects-in-progress {
+    grid-area: 1/1/2/2;
+  }
+
+  section.projects-completed {
+    grid-area: 2/1/3/2;
+  }
+
+  section.projects-container {
+    flex-flow: row wrap;
+  }
+
+}
+
+/* desktops */
+@media screen and (min-width: 1024px) {
+  .whole-page-container {
+    margin: 0 auto;
+    max-width: 1440px;
+  }
+}
+
+
+
+/* for testing purposes only */
+.hide {
+  display: none;
+}
+
+/* 
+TODO : responsivenessssssssssss!!!!!!!!!!
+TODO: projects and tasks layout
+
+
+LOGIC FOR PROJ AND TASKS NOTE :
+The project is the one who has a deadline
+then all tasks inside that project has status like completed, ongoing etc.
+which determines the percentage of the project
+
+then the deadlines in the dashboard will get all projects tasks where
+it the due date is today and where the status is still ongoing
+
+NOTE : 
+for better project file strutcture
+use includes for the same nav and header
+make 1 page per main functions (dashboard, proj, task. acc)
+and 1 css file per main functions
+and 1 js file per main functions
+convert html files into php
+
+make 1 css file for responsiveness adjustments
+
+*/
