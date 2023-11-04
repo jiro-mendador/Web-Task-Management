@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - Task Management</title>
+  <!-- main css -->
+  <link rel="stylesheet" href="dashboard.css">
+  <!-- for icons -->
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+  <article class="whole-page-container">
+    <header>
+      <i class="bx bx-menu bx-md" id="menu"></i>
+      <p class="page-title">Dashboard</p>
+      <i class="bx bx-search bx-sm search"></i>
+    </header>
+
+    <nav>
+      <p class="user-fullname">
+        Jiro Mendador
+        <i class="bx bx-window-close bx-xs" id="close-menu"></i>
+      </p>
+      <a href="#">
+        <i class="bx bxs-dashboard bx-xs"></i>
+        <p>Dashboard</p>
+      </a>
+      <a href="../projects/projects.html">
+        <i class="bx bxs-folder bx-xs"></i>
+        <p>Projects</p>
+      </a>
+      <a href="../tasks/task.html">
+        <i class="bx bxs-book-content bx-xs"></i>
+        <p>Tasks</p>
+      </a>
+    </nav>
+
+    <section class="contents">
+
+      <section>
+
+        <section class="task-graph">
+          <p class="task-graph-label">Task Activity</p>
+          <canvas id="graph" width="100" height="100"></canvas>
+        </section>
+        <section class="task-completed">
+          <p class="task-completed-label">Task Completed</p>
+          <div class="task-completed">
+            <p>1</p>
+          </div>
+        </section>
+
+      </section>
+
+      <section>
+
+        <section class="deadlines-container">
+          <p class="deadlines-container-label">Deadlines Today</p>
+          <div>
+            <section class="deadline-task">
+              <input type="checkbox" class="round-checkbox" id="task1" name="task1" value="Task 1">
+              <label for="task1">Practice Web Dev</label>
+            </section>
+            <section class="deadline-task">
+              <input type="checkbox" class="round-checkbox" id="task1" name="task1" value="Task 1">
+              <label for="task1">Do more projects</label>
+            </section>
+            <section class="deadline-task">
+              <input type="checkbox" class="round-checkbox" id="task1" name="task1" value="Task 1">
+              <label for="task1">Practice programming</label>
+            </section>
+            <section class="deadline-task">
+              <input type="checkbox" class="round-checkbox" id="task1" name="task1" value="Task 1">
+              <label for="task1">Practice Web Dev</label>
+            </section>
+            <section class="deadline-task">
+              <input type="checkbox" class="round-checkbox" id="task1" name="task1" value="Task 1">
+              <label for="task1">Do more projects</label>
+            </section>
+            <section class="deadline-task">
+              <input type="checkbox" class="round-checkbox" id="task1" name="task1" value="Task 1">
+              <label for="task1">Practice programming</label>
+            </section>
+            <section class="deadline-task">
+              <input type="checkbox" class="round-checkbox" id="task1" name="task1" value="Task 1">
+              <label for="task1">Practice Web Dev</label>
+            </section>
+            <section class="deadline-task">
+              <input type="checkbox" class="round-checkbox" id="task1" name="task1" value="Task 1">
+              <label for="task1">Do more projects</label>
+            </section>
+            <section class="deadline-task">
+              <input type="checkbox" class="round-checkbox" id="task1" name="task1" value="Task 1">
+              <label for="task1">Practice programming</label>
+            </section>
+          </div>
+        </section>
+
+        <section class="projects-container">
+          <p class="projects-container-label">Projects</p>
+          <div>
+            <section class="project">
+              <p class="project-priority-level">H</p>
+              <p class="project-title">Project title</p>
+              <div>
+                <p class="project-progress-label">Progress</p>
+                <p class="project-progress">84%</p>
+              </div>
+            </section>
+            <section class="project">
+              <p class="project-priority-level">M</p>
+              <p class="project-title">Project title</p>
+              <div>
+                <p class="project-progress-label">Progress</p>
+                <p class="project-progress">84%</p>
+              </div>
+            </section>
+            <section class="project">
+              <p class="project-priority-level">H</p>
+              <p class="project-title">Project title</p>
+              <div>
+                <p class="project-progress-label">Progress</p>
+                <p class="project-progress">84%</p>
+              </div>
+            </section>
+            <section class="project">
+              <p class="project-priority-level">M</p>
+              <p class="project-title">Project title</p>
+              <div>
+                <p class="project-progress-label">Progress</p>
+                <p class="project-progress">84%</p>
+              </div>
+            </section>
+            <section class="project">
+              <p class="project-priority-level">L</p>
+              <p class="project-title">Project title</p>
+              <div>
+                <p class="project-progress-label">Progress</p>
+                <p class="project-progress">84%</p>
+              </div>
+            </section>
+          </div>
+        </section>
+
+      </section>
+
+    </section>
+
+  </article>
+
+  <!-- the ff are subject to change!!!!!! -->
+  <!-- for bar chart -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- dashboard script -->
+  <script type="module" src="dashboard.js"></script>
+</body>
+
+</html>

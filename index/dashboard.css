@@ -1,0 +1,385 @@
+/*defaults*/
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-size: 16px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body,
+html {
+  height: 100%;
+  width: 100%;
+}
+
+:root {
+  /* colors */
+  --darker: #464b5b;
+  --darkest--: #242b3e;
+  --dark: #9b9da2;
+
+  --light: #ffffff;
+  --lighter: #f1ebe3;
+  --lighest--: #f8f6f1;
+
+  --yellow-acc: #e2b356;
+  --violet-acc: #d7aeff;
+  --dark-violet-acc: #543ca6;
+  --orange-acc: #ee7c58;
+  --skin-acc: #f7e0d9;
+
+  /* font-sizes */
+  --title: 1.7em;
+  --sub-title: 1.4em;
+  --details: 0.9em;
+  --sub-details: 0.7em;
+
+  /* border-radius */
+  --semi: 15px;
+  --hard: 30px;
+}
+
+body {
+  background-color: var(--darkest--);
+  overflow: visible;
+}
+
+/* parent container */
+.whole-page-container {
+  display: grid;
+  grid-template-columns: auto;
+  gap: 3em;
+  padding: 2em;
+}
+
+header,
+nav,
+nav a,
+nav p.user-fullname {
+  display: flex;
+
+  border-radius: var(--semi);
+  color: var(--lighest--);
+}
+
+/* header */
+header {
+  justify-content: space-between;
+  align-items: center;
+}
+
+header p.page-title {
+  font-size: var(--title);
+  font-weight: 600;
+}
+
+header i.search {
+  background-color: var(--darker);
+  padding: 0.2em;
+  border-radius: var(--semi);
+}
+
+/* nav */
+nav a {
+  gap: 2em;
+  align-items: center;
+  text-decoration: none;
+
+  padding:1em;
+}
+
+nav p {
+  font-weight: 100;
+  font-size: var(--details);
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+
+  display: none;
+  flex-direction: column;
+  background-color: var(--darkest--);
+  padding: 1em;
+  gap: 1em;
+}
+
+/* for selected content */
+nav>*:nth-child(2) {
+  background-color: var(--darker);
+  border-radius: var(--semi);
+}
+
+nav p.user-fullname {
+  justify-content: space-between;
+  padding: 1em;
+  font-weight: 600;
+}
+
+/* main content */
+section.contents,
+.contents>section {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 1em;
+}
+
+/* to allow project contents to auto scroll  */
+section.contents {
+  overflow: hidden;
+}
+
+/* main content sections border and font color */
+section.task-graph,
+section.task-completed,
+section.projects-container,
+section.deadlines-container {
+  border-radius: var(--semi);
+  color: var(--darkest----);
+  padding: 1em;
+}
+
+/* no of task per day graph  */
+section.task-graph {
+  background-color: var(--skin-acc);
+  padding: 1em;
+}
+
+.task-graph p.task-graph-label {
+  font-size: var(--sub-title);
+  font-weight: 600;
+}
+
+.task-graph canvas {
+  max-height: 13em;
+}
+
+
+/* task completed container */
+section.task-completed {
+  background-color: var(--yellow-acc);
+  max-width: 100%;
+}
+
+.task-completed .task-completed-label {
+  font-weight: 600;
+  font-size: var(--sub-title);
+  margin-bottom: 1em;
+}
+
+.task-completed div.task-completed {
+  margin: 0 auto;
+
+  display: grid;
+  place-items: center;
+  width: 8em;
+  height: 8em;
+  word-wrap: break-word;
+
+  background-color: var(--dark-violet-acc);
+  border: 0.6em solid var(--lighter);
+  border-radius: 50%;
+}
+
+.task-completed>div p {
+  color: var(--lighest--);
+  font-size: var(--sub-title);
+}
+
+
+
+/* deadlines container */
+section.deadlines-container {
+  background-color: var(--violet-acc);
+}
+
+.deadlines-container p.deadlines-container-label {
+  font-weight: 600;
+  font-size: var(--sub-title);
+  margin-bottom: 1em;
+}
+
+.deadlines-container>div,
+section.deadline-task {
+  display: flex;
+  gap: 1em;
+}
+
+.deadlines-container>div {
+  flex-flow: column nowrap;
+  max-height: 10em;
+  overflow-y: auto;
+}
+
+/* individual deadlines */
+section.deadline-task {
+  align-items: center;
+}
+
+/* custom checkbox */
+.round-checkbox {
+  width: 14px;
+  height: 14px;
+  background-color: #fff;
+  border-radius: 5px;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.round-checkbox:checked {
+  background-color: var(--darkest--);
+}
+
+
+
+/* projects container */
+section.projects-container {
+  background-color: var(--lighter);
+}
+
+.projects-container p.projects-container-label {
+  font-size: var(--sub-title);
+  font-weight: 600;
+  margin-bottom: 1em;
+}
+
+.projects-container>div {
+  display: flex;
+  flex-flow: row nowrap;
+
+  gap: 1em;
+  max-width: 100%;
+  overflow-x: auto;
+  padding: 2em 0;
+  white-space: nowrap;
+}
+
+/* individual projects */
+section.project {
+  position: relative;
+  border-radius: var(--semi);
+  background-color: var(--light);
+  padding: 1em 2.5em 1em 1em;
+  min-width: 8em;
+}
+
+section.project:hover {
+  border:3px solid var(--orange-acc);
+  background-color:var(--dark-violet-acc);
+  color:var(--lighest--);
+}
+
+section p.project-title {
+  margin: 1em 0 0.5em 0;
+  font-size: var(--details);
+  font-weight: 600;
+}
+
+section p.project-progress-label {
+  font-size: var(--sub-details);
+  font-weight: 300;
+}
+
+section p.project-progress {
+  font-size: var(--sub-title);
+  font-weight: 600;
+}
+
+section p.project-priority-level {
+  position: absolute;
+  top: -1em;
+  left: 1em;
+
+  border-radius: var(--hard);
+  background-color: var(--orange-acc);
+  color: var(--lighest--);
+
+  font-size: var(--sub-details);
+  font-weight: 300;
+
+  padding: 0.5em 1em;
+}
+
+
+
+
+/* adjustments */
+/* tablets */
+@media screen and (min-width: 768px) {
+  .whole-page-container {
+    grid-template-columns: 300px auto;
+    grid-template-rows: auto auto;
+    gap: 3em 1em;
+    overflow: hidden;
+  }
+
+  section.task-graph,
+  section.task-completed,
+  section.projects-container,
+  section.deadlines-container {
+    padding: 3em;
+  }
+
+  header {
+    grid-area: 1/2/2/3;
+  }
+
+  header i:nth-child(1),
+  nav p.user-fullname>i {
+    display: none;
+  }
+
+  nav {
+    position: relative;
+    display: flex;
+    grid-area: 2/1/3/2;
+  }
+
+  section.contents {
+    grid-area: 2/2/3/3;
+  }
+
+  .task-completed div.task-completed {
+    width: 10em;
+    height: 10em;
+  }
+
+}
+
+/* desktops */
+@media screen and (min-width: 1024px) {
+  .whole-page-container {
+    margin: 0 auto;
+    max-width: 1440px;
+  }
+
+  /* 2 sections inside contents */
+  section.contents>section {
+    flex-direction: row;
+  }
+
+  /* project and deadlines */
+  section.projects-container {
+    flex: 6;
+    overflow-x: auto;
+  }
+
+  section.deadlines-container {
+    flex: 3;
+  }
+
+  /* graph and task completed */
+  section.task-completed {
+    flex: 2;
+  }
+
+  section.task-graph {
+    flex: 3;
+  }
+
+}

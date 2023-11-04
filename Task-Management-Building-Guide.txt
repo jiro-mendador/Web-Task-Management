@@ -1,0 +1,64 @@
+WEB TASK MANAGEMENT WITH MAIL/TEXT NOTIFICATIONS
+
+Technologies :
+	1. HTML
+	2. Vanilla CSS
+	3. Vanilla JS
+	4. PHP
+	5. XAMPP MYSQL
+
+Features & Scope:
+	1. Multiple Users : 
+		A. sign-in/sign-up for account
+			a. last name, first name, username, password, email/number
+		B. User account management
+			a. update account information
+	2. Task Management :
+		A. Add, Update Delete Projects
+			a. category name
+		B. Add, Update, Delete tasks :
+			a. project, name, description, date-added, target-completion-date, priority level
+		C. Task Priority level :
+			a. high, medium, low
+		D. Task status : 
+			a. completed/working/cancelled
+		E. Sorting based on priority level or status
+		D. Search filter for task name or category name
+	3. User summary dashboard : 
+		A. Display upcoming deadlines
+		B. Number of task completed, working on, cancelled
+		C. Probability of completing tasks
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+STRUCTURING
+	HTML PAGES : 
+		A. Landing page : 
+			a. about website
+			b. features and scope
+			c. nav bar for website home/sign-in/sign up
+		B. Sign in page
+		C. Sign up page
+		D. User Home page
+			a. List of user's categories and tasks
+			b. Add Category and Task Button
+		E. Add and Update Category page
+		F. Add and Update Task page
+		G. Summary dashboard - 1 page
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
